@@ -1,0 +1,26 @@
+<div class="row mt-5">
+  <div class="col-md-12">
+    <h1>Todo List</h1>
+    <ng-container *ngIf="todoArr.length > 0; else Notodo">
+      <ul class="list-group">
+        <li
+          class="list-group-item d-flex justify-content-between"
+          *ngFor="let todo of todoArr"
+        >
+          <p>{{ todo.todoItem }}</p>
+          <div class="button">
+            <button mat-icon-button color="primary" (click)="oneditO(todo)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="onremove(todo)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+    <ng-template #Notodo>
+      <p class="alert alert-info">Todo is not available ..</p>
+    </ng-template>
+  </div>
+</div>

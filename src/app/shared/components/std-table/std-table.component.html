@@ -1,0 +1,40 @@
+<div class="table-rensponsive mt-5">
+  <ng-container *ngIf="StdArr.length > 0; else nostd">
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sr No.</th>
+          <th>Frist Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Edit</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let std of StdArr; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ std.fname }}</td>
+          <td>{{ std.lname }}</td>
+          <td>{{ std.email }}</td>
+          <td>{{ std.contact }}</td>
+
+          <td>
+            <button mat-icon-button (click)="Onedit(std)">
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+          </td>
+          <td>
+            <button mat-icon-button (click)="Onremove(std)">
+              <mat-icon color="warn">delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <ng-template #nostd>
+    <p class="alert alert-info">student is not available</p>
+  </ng-template>
+</div>

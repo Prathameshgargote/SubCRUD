@@ -1,0 +1,23 @@
+<mat-card class="mt-5">
+  <mat-card-header>
+    <mat-card-title
+      >{{ Iseditmode ? "Update Student" : "Add Student" }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="todoform" (ngSubmit)="OnSubmit()">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Todo Item</mat-label>
+        <input formControlName="todoItem" type="text" matInput />
+        <mat-error *ngIf="f['todoItem'] && f['todoItem'].hasError('required')">
+          Todo Item required field !</mat-error
+        >
+      </mat-form-field>
+      <div class="button">
+        <button mat-raised-button color="primary">
+          {{ Iseditmode ? "Update Student" : "Add Student" }}
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
