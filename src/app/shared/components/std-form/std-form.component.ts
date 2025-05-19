@@ -41,7 +41,7 @@ export class StdFormComponent implements OnInit {
       lname: new FormControl(null, Validators.required),
       email: new FormControl(null, [
         Validators.required,
-        Validators.pattern('/^[^s@]+@[^s@]+.[^s@]+$/'),
+        Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'),
       ]),
       contact: new FormControl(null, [Validators.required,Validators.maxLength(10),Validators.minLength(10)]),
     });
