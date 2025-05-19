@@ -52,6 +52,7 @@ export class StdFormComponent implements OnInit {
       if (this.Iseditmode) {
         let updateObj: Istd = { ...this.stdform.value, Id: this.EditObj.Id };
         this._stdService.updtarstd(updateObj);
+        this.stdform.reset()
         this.Iseditmode = false;
         this._snackbar.opensnackbar(
           `the ${updateObj.fname} is Update successfully!`

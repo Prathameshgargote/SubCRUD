@@ -51,6 +51,7 @@ export class TodoFormComponent implements OnInit {
       this._snackbar.opensnackbar(
         `the ${UpdateObj.todoItem} is Updated successfully!`
       );
+      this.todoform.reset()
     } else {
       let newtodo: Itodo = {
         ...this.todoform.value,
